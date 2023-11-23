@@ -30,7 +30,6 @@ export const ContactItems = styled.li`
 `;
 
 export const DeleteBtn = styled.button`
-  width: 100%;
   background-color: #fae3e3;
   color: black;
   border: 2px solid #f44336;
