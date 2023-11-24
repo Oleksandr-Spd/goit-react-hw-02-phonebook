@@ -17,6 +17,7 @@ export const ContactItems = styled.li`
   width: 480px;
   min-height: 60px;
   background-color: #f2f2f2;
+  opacity: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

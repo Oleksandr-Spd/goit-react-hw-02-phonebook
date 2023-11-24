@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { AddContact, Form, Input, Label } from './ContactForm.styled';
+import IMask from 'imask';
 
 export class ContactForm extends Component {
   state = {
@@ -21,6 +22,16 @@ export class ContactForm extends Component {
 
   reset = () => {
     this.setState({ name: '', number: '' });
+  };
+
+  handleInput = (event, maskOptions) => {
+    const { name } = event.currentTarget;
+    this.getMask(event.target, maskOptions);
+    this.handleChange(event);
+  };
+
+  getMask = (element, maskOptions) => {
+    var mask = new IMask(element, maskOptions);
   };
 
   render() {
@@ -49,6 +60,7 @@ export class ContactForm extends Component {
             value={this.state.number}
             onChange={this.handleChange}
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            onInput={event => this.handleInput(event, { mask: '000-00-00' })}
             required
           />
           <span className="validity"></span>
