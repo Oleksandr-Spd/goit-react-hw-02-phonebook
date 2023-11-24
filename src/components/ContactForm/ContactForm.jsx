@@ -25,13 +25,12 @@ export class ContactForm extends Component {
   };
 
   handleInput = (event, maskOptions) => {
-    const { name } = event.currentTarget;
     this.getMask(event.target, maskOptions);
     this.handleChange(event);
   };
 
   getMask = (element, maskOptions) => {
-    var mask = new IMask(element, maskOptions);
+    new IMask(element, maskOptions);
   };
 
   render() {
